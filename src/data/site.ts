@@ -78,8 +78,8 @@ export const aboutContent = {
   },
   ngoSection: {
     title: "We are Registered NGO With the Government of Canada",
-    // Certificate link from Wix was not extractable — mailto for now; see CONTENT_TODO.md
     ctaLabel: "View Incorporation Certificate",
+    certificateHref: "/documents/tswp-certificate-of-incorporation.pdf",
   },
 };
 

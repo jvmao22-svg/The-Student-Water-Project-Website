@@ -70,7 +70,7 @@ export function CTA({
                 size="lg"
                 className={
                   isGradient
-                    ? "border-white/30 bg-transparent text-white hover:border-white hover:text-white"
+                    ? "!border-white/30 !bg-transparent !text-white hover:!border-white hover:!text-white"
                     : ""
                 }
               >

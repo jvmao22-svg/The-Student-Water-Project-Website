@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { SponsorsStrip } from "@/components/sections/SponsorsStrip";
 import { CTA } from "@/components/sections/CTA";
 import { Button } from "@/components/ui/Button";
@@ -25,8 +26,16 @@ export default function SponsorshipsPage() {
         </Button>
       </PageHero>
 
-      <section className="py-16 sm:py-24">
-        <Container>
+      <section className="relative overflow-hidden py-16 sm:py-24">
+        <Image
+          src="/images/BannerSignedBy100Students.avif"
+          alt=""
+          fill
+          className="object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-white/80" aria-hidden="true" />
+        <Container className="relative">
           <ul className="grid gap-8 lg:grid-cols-2">
             {sponsorPackages.map((pkg) => (
               <li key={pkg.id}>

@@ -1,5 +1,13 @@
+import type { Metadata } from "next";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container } from "@/components/ui/Container";
+import { MascotField } from "@/components/ui/MascotField";
+
+export const metadata: Metadata = {
+    title: "Contact",
+    description:
+        "Have a question, partnership idea, or want to learn more about The Student Water Project? Get in touch with our team.",
+};
 
 export default function ContactPage() {
     return (
@@ -12,8 +20,11 @@ export default function ContactPage() {
                 mascotAlt="Student Water Project droplet mascot standing beside a signpost"
             />
 
-            <section className="py-16 sm:py-20">
-                <Container>
+            <section className="relative overflow-hidden py-16 sm:py-20">
+                <MascotField
+                    mascots={["/images/mascot/waving.png", "/images/mascot/mail.png"]}
+                />
+                <Container className="relative">
                     <div className="mx-auto grid max-w-5xl gap-10 lg:grid-cols-2">
                         <div>
                             <h2 className="text-3xl font-bold text-navy">
@@ -39,17 +50,13 @@ export default function ContactPage() {
                                 Send us a message
                             </h2>
 
-                            <p className="mt-3 text-sm leading-6 text-navy/65">
-                                Our full website contact form is coming soon. In the meantime,
-                                you can contact the team directly by email.
-                            </p>
-
-                            <a
-                                href="mailto:thestudentwaterproject@gmail.com"
-                                className="mt-6 inline-flex rounded-full bg-sky px-6 py-3 font-bold text-white transition hover:bg-navy"
-                            >
-                                Email us
-                            </a>
+                            <iframe
+                                src="https://talented-practice-cd0.notion.site/ebd//6d3a6fd3e37f4c788aec15ecffcfb4c2"
+                                width="100%"
+                                height="600"
+                                className="mt-5 rounded-2xl border border-navy/10"
+                                allowFullScreen
+                            />
                         </div>
                     </div>
                 </Container>

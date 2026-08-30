@@ -5,10 +5,11 @@ import { Hero } from "@/components/sections/Hero";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { ImpactStats } from "@/components/sections/ImpactStats";
 import { MerchandiseSignup } from "@/components/sections/MerchandiseSignup";
+import { PhotoGallery } from "@/components/sections/PhotoGallery";
 import { SocialFollow } from "@/components/sections/SocialFollow";
 import { SponsorsStrip } from "@/components/sections/SponsorsStrip";
 import { VideoFeature } from "@/components/sections/VideoFeature";
-import { FloatingCircle } from "@/components/ui/FloatingCircle";
+import { VolunteerPostingsPreview } from "@/components/sections/VolunteerPostingsPreview";
 import { homeFinalCta } from "@/data/site";
 
 export default function HomePage() {
@@ -17,53 +18,14 @@ export default function HomePage() {
       <Hero />
       <ImpactStats />
       <HowItWorks />
-
-      <div className="relative">
-        <FloatingCircle
-          src="/images/246CANON/IMG_4676.JPG"
-          size={320}
-          className="right-[1%] top-1/4 hidden lg:block"
-          speed={0.12}
-        />
-        <VideoFeature />
-      </div>
-
+      <VideoFeature />
       <FeaturedProject />
-
-      <div className="relative">
-        <FloatingCircle
-          src="/images/246CANON/IMG_4644.JPG"
-          size={300}
-          className="left-[1%] top-1/3 hidden lg:block"
-          speed={0.16}
-          delay={1}
-        />
-        <FundraisersPreview />
-      </div>
-
-      <div className="relative">
-        <FloatingCircle
-          src="/images/246CANON/IMG_4625.JPG"
-          size={280}
-          className="right-[1%] top-1/3 hidden lg:block"
-          speed={0.14}
-          delay={2}
-        />
-        <MerchandiseSignup />
-      </div>
-
+      <FundraisersPreview />
+      <MerchandiseSignup />
+      <VolunteerPostingsPreview />
       <SocialFollow />
-
-      <div className="relative">
-        <FloatingCircle
-          src="/images/246CANON/IMG_4638.JPG"
-          size={300}
-          className="left-[1%] top-1/4 hidden lg:block"
-          speed={0.18}
-          delay={0.5}
-        />
-        <SponsorsStrip />
-      </div>
+      <SponsorsStrip />
+      <PhotoGallery />
 
       <CTA
         title={homeFinalCta.title}

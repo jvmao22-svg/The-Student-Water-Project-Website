@@ -1,10 +1,14 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
+import { MascotField } from "@/components/ui/MascotField";
 
 export function SocialFollow() {
     return (
-        <section className="py-16 sm:py-20">
-            <Container>
+        <section className="relative overflow-hidden py-16 sm:py-20">
+            <MascotField
+                mascots={["/images/mascot/friends.png", "/images/mascot/nerd-water.png"]}
+            />
+            <Container className="relative">
                 <div className="grid items-center gap-10 rounded-3xl bg-navy px-8 py-10 text-white sm:px-12 lg:grid-cols-[1fr_320px] lg:py-12">
                     <div className="max-w-2xl">
                         <p className="text-sm font-bold uppercase tracking-[0.18em] text-sky">

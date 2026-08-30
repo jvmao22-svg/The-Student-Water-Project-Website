@@ -2,15 +2,19 @@ import Image from "next/image";
 import { challengeHomePreview } from "@/data/fundraisers";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { MascotField } from "@/components/ui/MascotField";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function FundraisersPreview() {
   return (
-    <section className="bg-water/5 py-16 sm:py-24">
-      <Container>
+    <section className="relative overflow-hidden bg-water/5 py-16 sm:py-24">
+      <MascotField
+        mascots={["/images/mascot/camera.png", "/images/mascot/photo.png"]}
+      />
+      <Container className="relative">
         <SectionHeader
           eyebrow="Events"
-          title="Current Fundraising Initiatives"
+          title="12,000 KM Challenge Results"
           className="mb-10"
         />
         <div className="grid items-center gap-10 rounded-2xl border border-navy/8 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-2 lg:gap-12">
@@ -33,9 +37,9 @@ export function FundraisersPreview() {
             <p className="mt-4 text-base leading-relaxed text-navy/70">
               {challengeHomePreview.summary}
             </p>
-            <p className="mt-4 font-medium text-navy">Participants can:</p>
+            <p className="mt-4 font-medium text-navy">By the numbers:</p>
             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-navy/70">
-              {challengeHomePreview.participantsCan.map((item) => (
+              {challengeHomePreview.highlights.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>

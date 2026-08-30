@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { TeamMemberCard } from "@/components/cards/TeamMemberCard";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { aboutContent, site } from "@/data/site";
+import { aboutContent } from "@/data/site";
 import { teamIntro, teamMembers } from "@/data/team";
 
 export const metadata: Metadata = {
@@ -142,7 +142,8 @@ export default function AboutPage() {
 
                         <div className="mt-8">
                             <Button
-                                href={`mailto:${site.email}?subject=Incorporation%20Certificate`}
+                                href={aboutContent.ngoSection.certificateHref}
+                                external
                                 variant="outline"
                                 size="lg"
                                 className="border-navy/30 bg-sky-200/80 text-navy hover:border-navy hover:bg-sky-200"

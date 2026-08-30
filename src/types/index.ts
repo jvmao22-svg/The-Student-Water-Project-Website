@@ -53,6 +53,15 @@ export interface VolunteerRole {
   requirements?: string;
 }
 
+export interface VolunteerPosting {
+  title: string;
+  subtitle: string;
+  deadline: string;
+  summary: string;
+  details: string[];
+  pdfHref: string;
+}
+
 export interface FundraiserInitiative {
   slug: string;
   title: string;
@@ -67,6 +76,7 @@ export interface FundraiserInitiative {
   image: string;
   primaryCta?: CtaLink;
   secondaryCta?: CtaLink;
+  tertiaryCta?: CtaLink;
 }
 
 export interface SponsorPackage {
@@ -81,7 +91,7 @@ export interface SponsorPackage {
 
 export interface Sponsor {
   name: string;
-  /** Placeholder path — add logo to /public/images/sponsors/ */
+  /** Path under /public/images/sponsors/ */
   logo: string;
   href?: string;
 }
@@ -90,6 +100,11 @@ export interface PilotPhase {
   phase: number;
   title: string;
   description: string;
+}
+
+export interface FundingLineItem {
+  item: string;
+  costCad: number;
 }
 
 export interface PilotContent {
@@ -108,7 +123,7 @@ export interface PilotContent {
   implementationIntro: string;
   phases: PilotPhase[];
   impact: string[];
-  fundingBreakdown: string[];
+  fundingBreakdown: FundingLineItem[];
   summary: string[];
   figures: { id: string; caption: string; image: string }[];
 }

@@ -6,8 +6,16 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 
 export function FeaturedProject() {
   return (
-    <section className="py-16 sm:py-24">
-      <Container>
+    <section className="relative overflow-hidden py-16 sm:py-24">
+      <Image
+        src="/images/kenya-school-toilets.png"
+        alt=""
+        fill
+        className="object-cover"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-white/80" aria-hidden="true" />
+      <Container className="relative">
         <SectionHeader
           eyebrow={featuredProject.eyebrow}
           title={featuredProject.title}

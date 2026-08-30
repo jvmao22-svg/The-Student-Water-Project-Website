@@ -17,16 +17,15 @@ export const fundraiserInitiatives: FundraiserInitiative[] = [
     date: "July–August 2026",
     location: "Remote / Global",
     ledBy: "Student Water Project Executive team",
-    status: "Active",
+    status: "Completed",
     summary:
-      "The 12,000 KM Challenge is a student-led fundraising campaign organized by The Student Water Project to support the Rianyabayo Memorial Academy water initiative in Kenya. Together, participants work toward a collective goal of travelling 12,000 kilometres — symbolically representing the distance between Canada and Kenya — while raising funds and awareness for clean drinking water.",
+      "The 12,000 KM Challenge was a student-led fundraising campaign organized by The Student Water Project to support the Rianyabayo Memorial Academy water initiative in Kenya. From August 2–9, 2026, participants worked together toward a collective goal of travelling 12,000 kilometres — symbolically representing the distance between Canada and Kenya — while raising funds and awareness for clean drinking water. The challenge has wrapped up, but our campaign page is still open for donations.",
     details: [
-      "Register via Zeffy. The registration fee is $15.00.",
-      "Join or create a team. The team raising the most funds and the team running the most kilometres will each have their team name engraved on a UV system.",
-      "Set your distance goal via the Google Form included in your registration receipt.",
-      "During race week (Aug 2–9), submit tracking proof via Strava, Apple Health, Google Fit, Garmin, treadmill workouts, and more.",
-      "Create a personal or team fundraising goal and invite friends, family, classmates, and neighbours to sponsor your kilometres.",
-      "Every registered participant receives a participant kit with student-designed TSWP stickers, a student-designed T-shirt, and a personalized message from the committee.",
+      "Held August 2–9, 2026, with a community kickoff event on August 3 at Springbank Park in London, Ontario.",
+      "60 participants covered 3,504 km, backed by 161 donors and 5 sponsors and partners.",
+      "$12,367.63 was raised — 123.6% of our $10,000 goal — with 100% of peer-to-peer donations going directly to the project.",
+      "Funds raised are going toward deploying 2 UV reactors at Rianyabayo Memorial Academy in Kisii, Kenya, providing safe drinking water for 300+ students.",
+      "See the full breakdown of results, sponsors, and thank-yous in our Final Report.",
     ],
     // TODO: Replace with challenge/event photo
     image: "/images/fundraisers/12000-km.jpg",
@@ -36,8 +35,13 @@ export const fundraiserInitiatives: FundraiserInitiative[] = [
       external: true,
     },
     secondaryCta: {
-      label: "Register / Donate on Zeffy",
+      label: "We're Still Accepting Donations!",
       href: externalLinks.zeffyCampaign,
+      external: true,
+    },
+    tertiaryCta: {
+      label: "Read the Final Report",
+      href: "/documents/12000-km-challenge-final-report.pdf",
       external: true,
     },
   },
@@ -46,13 +50,12 @@ export const fundraiserInitiatives: FundraiserInitiative[] = [
 export const challengeHomePreview = {
   title: "12,000 KM Challenge",
   subtitle: "Virtual Running Fundraiser",
-  // Home page Wix copy (note: challenge site describes a multi-day Aug 2–9 race week)
   summary:
-    "The 12,000 KM Challenge is a global running initiative. Participants run anywhere in the world and contribute their distance toward a collective goal of 12,000 km, representing the distance from Toronto to Kisii, Kenya.",
-  participantsCan: [
-    "Run outdoors or on a treadmill",
-    "Complete multiple runs throughout the day to accumulate mileage",
-    "Contribute any distance",
+    "The 12,000 KM Challenge was a global running initiative held August 2–9, 2026. Participants ran, walked, and cycled around the world, contributing their distance toward a collective goal of 12,000 km, representing the distance from Toronto to Kisii, Kenya. The challenge has concluded — thank you to everyone who took part!",
+  highlights: [
+    "3,504 km travelled by 60 participants",
+    "$12,367.63 raised — 123.6% of our $10,000 goal",
+    "161 donors and 5 sponsors and partners",
   ],
   primaryCta: {
     label: "Learn More",
@@ -65,7 +68,7 @@ export const challengeHomePreview = {
       external: true,
     },
     {
-      label: "See Campaign",
+      label: "We're Still Accepting Donations!",
       href: externalLinks.zeffyCampaign,
       external: true,
     },

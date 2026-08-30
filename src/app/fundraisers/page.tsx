@@ -1,39 +1,22 @@
 import type { Metadata } from "next";
+import type { FundraiserInitiative } from "@/types";
 import { CTA } from "@/components/sections/CTA";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
-import { ContentCard } from "@/components/ui/ContentCard";
 import { PageHero } from "@/components/ui/PageHero";
 import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import Image from "next/image";
-import {
-  challengeCommittee,
-  fundraiserInitiatives,
-  fundraisersPage,
-} from "@/data/fundraisers";
+import { fundraiserInitiatives, fundraisersPage } from "@/data/fundraisers";
 
 export const metadata: Metadata = {
   title: "Fundraisers",
   description: fundraisersPage.description,
 };
 
-export default function FundraisersPage() {
+function InitiativeCard({ initiative }: { initiative: FundraiserInitiative }) {
   return (
-    <>
-      <PageHero
-        eyebrow={fundraisersPage.eyebrow}
-        title={fundraisersPage.title}
-        description={fundraisersPage.description}
-      />
-
-      <section className="py-16 sm:py-24">
-        <Container className="space-y-10">
-          {fundraiserInitiatives.map((initiative) => (
-            <article
-              key={initiative.slug}
-              className="grid gap-8 overflow-hidden rounded-2xl border border-navy/8 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-2"
-            >
+    <article className="grid gap-8 overflow-hidden rounded-2xl border border-navy/8 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-2">
                   <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-water/10 shadow-sm">
                       <Image
                           src="/images/246CANON/IMG_4684.JPG"
@@ -100,41 +83,68 @@ export default function FundraisersPage() {
                       {initiative.secondaryCta.label}
                     </Button>
                   )}
+                  {initiative.tertiaryCta && (
+                    <Button
+                      href={initiative.tertiaryCta.href}
+                      variant="outline"
+                      external={initiative.tertiaryCta.external}
+                    >
+                      {initiative.tertiaryCta.label}
+                    </Button>
+                  )}
                 </div>
               </div>
-            </article>
+    </article>
+  );
+}
+
+export default function FundraisersPage() {
+  const currentInitiatives = fundraiserInitiatives.filter(
+    (initiative) => initiative.status !== "Completed"
+  );
+  const completedInitiatives = fundraiserInitiatives.filter(
+    (initiative) => initiative.status === "Completed"
+  );
+
+  return (
+    <>
+      <PageHero
+        eyebrow={fundraisersPage.eyebrow}
+        title={fundraisersPage.title}
+        description={fundraisersPage.description}
+      />
+
+      <section className="pt-16 sm:pt-24">
+        <Container className="space-y-10">
+          <SectionHeader title="Current Initiatives" className="mb-6" />
+          {currentInitiatives.length === 0 ? (
+            <p className="text-base text-navy/70">None at the moment.</p>
+          ) : (
+            currentInitiatives.map((initiative) => (
+              <InitiativeCard key={initiative.slug} initiative={initiative} />
+            ))
+          )}
+        </Container>
+      </section>
+
+      <section className="py-16 sm:py-24">
+        <Container className="space-y-10">
+          <SectionHeader title="Completed Events" className="mb-6" />
+          {completedInitiatives.map((initiative) => (
+            <InitiativeCard key={initiative.slug} initiative={initiative} />
           ))}
         </Container>
       </section>
 
-      <section className="bg-water/5 py-16 sm:py-20">
-        <Container>
-          <SectionHeader
-            title="12,000 KM Challenge Committee"
-            description="The students powering the 12,000 KM Challenge."
-            className="mb-10"
-          />
-          <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {challengeCommittee.map((member) => (
-              <li key={member.name}>
-                <ContentCard title={member.name}>
-                  <p className="text-sm text-navy/65">{member.detail}</p>
-                </ContentCard>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
       <CTA
-        title="Support our kickoff fundraiser"
-        description="See the student-designed challenge site or donate through the campaign page."
+        title="Thank you for supporting our 12,000 KM Challenge"
+        description="The challenge has wrapped up, but you can still see the student-designed challenge site or donate through our campaign page."
         primaryCta={{
           label: "See Challenge Site",
           href: "https://tswp12k.vercel.app/",
         }}
         secondaryCta={{
-          label: "See Campaign",
+          label: "We're Still Accepting Donations!",
           href: "https://www.zeffy.com/en-CA/peer-to-peer/25-000-km-challenge",
         }}
         variant="gradient"

@@ -62,7 +62,7 @@ export function Button({
         <a
           href={props.href}
           className={styles}
-          {...(props.href.startsWith("http")
+          {...(!props.href.startsWith("mailto:")
             ? { target: "_blank", rel: "noopener noreferrer" }
             : {})}
         >

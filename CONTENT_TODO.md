@@ -52,9 +52,7 @@ Source: https://www.tswp.org/student-publications
 - **Ask the team:** LinkedIn profile URLs for Valerie Mao, Sophia Yenson, Grace Churney, Dhruv Joshi, Ron Blutrich, Dr. Denise Rebello, Dr. Paul Nyangaresi.
 
 ### Incorporation Certificate
-- About page has “View Incorporation Certificate” but the document URL was not extractable.
-- **Ask the team:** PDF or public link for the Canadian NGO incorporation certificate.
-- Place file at e.g. `/public/docs/incorporation-certificate.pdf` and wire the About CTA.
+- Resolved: PDF placed at `/public/documents/tswp-certificate-of-incorporation.pdf`; About page CTA now opens it in a new tab.
 
 ### Funding Breakdown amounts
 - Pilot page only lists categories: equipment, labour/deployment, organizational budget.

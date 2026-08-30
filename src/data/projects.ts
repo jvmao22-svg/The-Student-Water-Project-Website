@@ -102,9 +102,13 @@ export const pilotProject: PilotContent = {
     "Beyond its immediate impact, this initiative will serve as a scalable model that can be replicated in other rural communities facing similar challenges.",
   ],
   fundingBreakdown: [
-    "Cost of equipment",
-    "Labour and deployment costs",
-    "Organizational budget",
+    { item: "Two UV LED systems (~35 LPM) @$2,000", costCad: 4000 },
+    { item: "25,000 L water storage tank", costCad: 3000 },
+    { item: "Photovoltaic system (1 kW) and battery", costCad: 2000 },
+    { item: "Latrine and handwashing stations", costCad: 5000 },
+    { item: "System installation & labor expenses", costCad: 5000 },
+    { item: "Travel expenses (return flights @$3,000)", costCad: 3000 },
+    { item: "Miscellaneous organization expenses", costCad: 3000 },
   ],
   summary: [
     "Access to safe drinking water is essential, yet students at Rianyabayo Memorial Academy still face daily risks due to system limitations.",

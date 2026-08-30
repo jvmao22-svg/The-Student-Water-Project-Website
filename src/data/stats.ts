@@ -2,11 +2,11 @@ import type { Stat } from "@/types";
 
 export const impactStats: Stat[] = [
   {
-    value: "$800",
+    value: "$12,327.63",
     label: "Funds Raised",
   },
   {
-    value: "10",
+    value: "40",
     label: "Students Involved",
   },
   {

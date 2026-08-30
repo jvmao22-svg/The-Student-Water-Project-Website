@@ -48,29 +48,29 @@ export const sponsorPackages: SponsorPackage[] = [
   },
 ];
 
-/**
- * "Currently Supported By" logos appear on the Wix homepage, but accessible
- * names/URLs were not extractable. Add real sponsor assets when available.
- */
 export const currentSponsors: Sponsor[] = [
   {
     name: "Clear Inc.",
-    // TODO: Add logo to /public/images/sponsors/clear-inc.png
-    logo: "/images/sponsors/clear-inc.png",
-  },
-  {
-    name: "Mitacs",
-    // TODO: Add logo to /public/images/sponsors/mitacs.png
-    logo: "/images/sponsors/mitacs.png",
-  },
-  {
-    name: "MW Technologies",
-    // TODO: Add logo to /public/images/sponsors/mw-technologies.png
-    logo: "/images/sponsors/mw-technologies.png",
+    logo: "/images/sponsors/clear.png",
   },
   {
     name: "A Drop of Hope",
-    // TODO: Add logo to /public/images/sponsors/a-drop-of-hope.png
-    logo: "/images/sponsors/a-drop-of-hope.png",
+    logo: "/images/sponsors/a-drop-of-hope.webp",
+  },
+  {
+    name: "WaterSprint",
+    logo: "/images/sponsors/watersprint.png",
+  },
+  {
+    name: "BCA",
+    logo: "/images/sponsors/bca.png",
+  },
+  {
+    name: "Xatoms",
+    logo: "/images/sponsors/xatoms.png",
+  },
+  {
+    name: "Finan",
+    logo: "/images/sponsors/finan.png",
   },
 ];

@@ -19,8 +19,8 @@ export default function PilotProjectPage() {
     <>
       <PageHero
         eyebrow={pilotProject.title}
-        title={pilotProject.school}
-        description={`${pilotProject.location} · ${pilotProject.region}`}
+        title={pilotProject.location}
+        description={`${pilotProject.school} · ${pilotProject.region}`}
       >
         <div className="flex flex-wrap gap-3">
           <Button href="/donate" variant="secondary">
@@ -39,6 +39,11 @@ export default function PilotProjectPage() {
 
       <section className="py-16 sm:py-20">
         <Container>
+          <SectionHeader
+            eyebrow="I. Introduction"
+            title="Introduction"
+            className="mb-8"
+          />
           <div className="mx-auto max-w-3xl space-y-5 text-base leading-relaxed text-navy/75">
             {pilotProject.intro.map((paragraph) => (
               <p key={paragraph.slice(0, 48)}>{paragraph}</p>
@@ -58,20 +63,6 @@ export default function PilotProjectPage() {
               {pilotProject.figures[0].caption}
             </p>
           </div>
-        </Container>
-      </section>
-
-      <section className="bg-water/5 py-16 sm:py-20">
-        <Container>
-          <SectionHeader
-            eyebrow="I. Introduction"
-            title={pilotProject.location}
-            description="Access to safe drinking water remains a serious challenge in many underserved rural schools. This pilot expands a proven UV treatment system for the entire school community."
-            className="mb-8"
-          />
-          <Button href="/fundraisers" variant="primary">
-            See Current Projects
-          </Button>
         </Container>
       </section>
 
@@ -118,7 +109,7 @@ export default function PilotProjectPage() {
                       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-water/10 shadow-sm">
                           <Image
                               src="/images/CurrentConditionOfSchoolToilets.avif"
-                              alt={pilotProject.figures[0].caption}
+                              alt={pilotProject.figures[1].caption}
                               fill
                               className="object-cover"
                               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -146,8 +137,8 @@ export default function PilotProjectPage() {
           <div className="mx-auto mt-10 max-w-3xl">
                       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-water/10 shadow-sm">
                           <Image
-                              src={pilotProject.figures[0].image}
-                              alt={pilotProject.figures[0].caption}
+                              src="/images/BannerSignedBy100Students.avif"
+                              alt={pilotProject.figures[2].caption}
                               fill
                               className="object-cover"
                               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -197,8 +188,8 @@ export default function PilotProjectPage() {
           <div className="mx-auto mt-10 max-w-3xl">
                       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-water/10 shadow-sm">
                           <Image
-                              src="/images/BannerSignedBy100Students.avif"
-                              alt={pilotProject.figures[0].caption}
+                              src="/images/StudentsandstaffstandingoutsideofRianyabayoMemorialAcademy.avif"
+                              alt={pilotProject.figures[3].caption}
                               fill
                               className="object-cover"
                               sizes="(max-width: 1024px) 100vw, 50vw"
@@ -219,20 +210,49 @@ export default function PilotProjectPage() {
             description="The funding for the project will be divided into:"
             className="mb-8"
           />
-          <ul className="grid gap-4 sm:grid-cols-3">
-            {pilotProject.fundingBreakdown.map((item) => (
-              <li
-                key={item}
-                className="rounded-2xl border border-navy/8 bg-white p-6 text-center font-semibold text-navy shadow-sm"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-6 text-sm text-navy/55">
-            Detailed dollar amounts were not published on the Wix page — see
-            CONTENT_TODO.md.
-          </p>
+          <div className="overflow-hidden rounded-2xl border border-navy/8 bg-white shadow-sm">
+            <table className="w-full text-left text-sm">
+              <thead>
+                <tr className="border-b border-navy/8 bg-water/5 text-navy">
+                  <th className="w-16 px-4 py-3 font-semibold sm:px-6">
+                    S/No.
+                  </th>
+                  <th className="px-4 py-3 font-semibold sm:px-6">Item</th>
+                  <th className="px-4 py-3 text-right font-semibold sm:px-6">
+                    Cost (CAD)
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {pilotProject.fundingBreakdown.map((line, index) => (
+                  <tr key={line.item} className="border-b border-navy/8">
+                    <td className="px-4 py-3 text-navy/70 sm:px-6">
+                      {index + 1}
+                    </td>
+                    <td className="px-4 py-3 text-navy/70 sm:px-6">
+                      {line.item}
+                    </td>
+                    <td className="px-4 py-3 text-right text-navy/70 sm:px-6">
+                      {line.costCad.toLocaleString()}
+                    </td>
+                  </tr>
+                ))}
+                <tr>
+                  <td
+                    colSpan={2}
+                    className="px-4 py-3 text-center font-bold text-navy sm:px-6"
+                  >
+                    Total
+                  </td>
+                  <td className="px-4 py-3 text-right font-bold text-navy sm:px-6">
+                    {pilotProject.fundingBreakdown
+                      .reduce((sum, line) => sum + line.costCad, 0)
+                      .toLocaleString()}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </Container>
       </section>
 
@@ -253,7 +273,7 @@ export default function PilotProjectPage() {
 
       <CTA
         title="Support the Kenya Water Project Expansion"
-        description="Every contribution is matched dollar-for-dollar by Clear Inc., doubling its impact."
+        description="Every contribution is matched dollar-for-dollar by partner organizations, doubling its impact."
         primaryCta={{ label: "Donate", href: "/donate" }}
         secondaryCta={{ label: "Become a Sponsor", href: "/sponsorships" }}
         variant="gradient"
